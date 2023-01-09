@@ -1,0 +1,25 @@
+<div class="flex flex-col h-[100%]">
+  <div class="flex flex-col h-[100%]">
+    <div class="h-[50px] flex items-center mt-[29px] ml-[20px]">
+      <h3 [routerLink]="['/']" class="text-[#333333] text-[24px] font-extrabold leading-[36px] font-inter">
+        {{ logoApp }}
+      </h3>
+    </div>
+    <aside class="w-[256px] rounded-[5px]" aria-label="Sidebar">
+      <div class="overflow-y-auto">
+        <ul class="pl-[unset] overflow-hidden">
+          <ng-container *ngFor="let item of navigation">
+            <li class="px-[12px] py-[12px] cursor-pointer flex gap-[12px] items-center duration-2000">
+              <img [src]="item?.icon" class="p-[5px] img-svg" />
+              <a
+                [routerLink]="[item?.path]"
+                class="hover:text-[#333333] text-[12px] leading-[20px] font-extrabold text-[#333333] no-underline font-inter"
+                >{{ item.name }}</a
+              >
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>

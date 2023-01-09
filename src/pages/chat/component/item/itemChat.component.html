@@ -1,0 +1,19 @@
+<ng-container *ngFor="let item of contentChats">
+  <div class="flex gap-[15px] my-[5px]" [class.justify-end]="item?.type === 'me'">
+    <div [class.order-1]="item?.type === 'me'">
+      <img [src]="item.avatar" alt="avartar" class="w-full h-full rounded-[50%]" />
+    </div>
+    <div class="flex flex-col gap-[10px]">
+      <div
+        style="
+          background: linear-gradient(rgb(187, 103, 255) 0%, rgb(196, 132, 243) 100%);
+
+          opacity: 1;
+        "
+        class="text-white px-[16px] py-[8px] bg-[#F1F1F1] rounded-[12px] text-[14px] leading-[150%] font-semibold overflow-y-hidden overflow-x-hidden outline-none font-inter"
+      >
+        {{ item.content }}
+      </div>
+    </div>
+  </div>
+</ng-container>

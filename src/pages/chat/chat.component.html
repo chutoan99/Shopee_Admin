@@ -1,0 +1,135 @@
+<div class="App">
+  <div class="appGlass">
+    <div class="flex w-full h-full">
+      <aside class="w-[12%]">
+        <app-aside></app-aside>
+      </aside>
+      <div class="flex flex-col overflow-y-auto w-full p-[26px]">
+        <main class="flex w-[100%] flex-1 rounded-[15px]" style="border: 1px solid rgba(255, 255, 255, 0.9); background: rgba(255, 255, 255, 0.7)">
+          <div class="flex-1 flex-col-reverse justify-between flex">
+            <header
+              class="justify-between flex px-[24px] h-[81px] items-center order-1 py-[10px]"
+              style="border-bottom: '1px solid rgba(0, 0, 0, 0.08)'"
+            >
+              <div class="flex justify-center items-center gap-[6px]">
+                <a class="flex gap-[16px]" href="# ">
+                  <div class="w-full h-full">
+                    <img src="../../assets/img/Avatar_1.png" alt="avartar" class="w-full h-full rounded-[50%]" />
+                  </div>
+                  <div class="w-full gap-[10px] flex items-center justify-between">
+                    <div>
+                      <a class="hover:text-[#606C80] font-inter text-[12px] flex items-center font-extrabold text-[#606C80] no-underline"
+                        >Peter Taylor</a
+                      >
+                      <p
+                        class="text-[12px] leading-[150%] font-semibold flex items-center gap-[8px] mb-[unset] font-inter"
+                        style="color: 'rgba(0, 0, 0, 0.4)'"
+                      >
+                        <svg width="10" height="11" viewBox="0 0 10 11" fill="none">
+                          <circle cx="5" cy="5.5" r="5" fill="#68D391" />
+                        </svg>
+                        Online
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <button
+                class="px-[16px] py-[10px] flex gap-[8px] rounded-[8px] items-center text-white text-[16px] font-semibold font-inter"
+                style="background: linear-gradient(rgb(154, 171, 248) -146.42%, rgb(113, 175, 255) -46.42%); opacity: 1"
+              >
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <path
+                    d="M15.9688 13.0938L15.2188 16.25C15.125 16.7188 14.75 17.0312 14.2812 17.0312C6.40625 17 0 10.5938 0 2.71875C0 2.25 0.28125 1.875 0.75 1.78125L3.90625 1.03125C4.34375 0.9375 4.8125 1.1875 5 1.59375L6.46875 5C6.625 5.40625 6.53125 5.875 6.1875 6.125L4.5 7.5C5.5625 9.65625 7.3125 11.4062 9.5 12.4688L10.875 10.7812C11.125 10.4688 11.5938 10.3438 12 10.5L15.4062 11.9688C15.8125 12.1875 16.0625 12.6562 15.9688 13.0938Z"
+                    fill="#fff"
+                  /></svg
+                >Call
+              </button>
+            </header>
+
+            <section class="flex flex-col-reverse justify-start h-full">
+              <div class="h-[96px] flex items-center justify-center gap-[24px]">
+                <span>
+                  <svg width="18" height="21" viewBox="0 0 18 21" fill="none">
+                    <path
+                      opacity="0.4"
+                      d="M6.1875 20.5C2.82812 20.5 0.09375 17.7656 0.09375 14.3672C0.09375 12.7266 0.71875 11.1641 1.85156 10.0312L10.0938 1.78906C10.9531 0.96875 12.1641 0.5 13.3359 0.5C16.2656 0.5 17.9062 2.88281 17.9062 5.03125C17.9062 6.24219 17.3984 7.41406 16.5391 8.27344L9 15.8125C8.41406 16.3984 7.63281 16.6719 6.89062 16.6719C4.50781 16.6719 3.88281 14.5625 3.88281 13.7031C3.88281 12.9609 4.19531 12.1797 4.78125 11.5938L10.3281 6.04688C10.5625 5.8125 10.8359 5.73438 11.1094 5.73438C11.6953 5.73438 12.2031 6.20312 12.2031 6.82812C12.2031 7.10156 12.0859 7.375 11.8906 7.60938L6.30469 13.1562C6.14844 13.3125 6.07031 13.5078 6.07031 13.7031C6.07031 14.1719 6.46094 14.5234 6.89062 14.5234C7.08594 14.5234 7.28125 14.4453 7.4375 14.2891L15.0156 6.71094C15.4453 6.24219 15.6797 5.65625 15.6797 5.03125C15.6797 3.9375 14.8594 2.6875 13.3359 2.6875C12.7109 2.6875 12.0859 2.92188 11.6562 3.35156L3.41406 11.5938C2.67188 12.3359 2.28125 13.3125 2.28125 14.3672C2.28125 16.2422 3.64844 18.2734 6.1875 18.2734C7.24219 18.2734 8.25781 17.9219 9 17.1797L15.2109 10.9297C15.4453 10.7344 15.7188 10.6172 15.9922 10.6172C16.5781 10.6172 17.0859 11.0859 17.0859 11.7109C17.0859 11.9844 16.9688 12.2578 16.7734 12.4922L10.5234 18.7031C9.39062 19.875 7.82812 20.5 6.1875 20.5Z"
+                      fill="black"
+                    /></svg
+                ></span>
+                <div
+                  class="w-[80%] h-[48px] flex items-center gap-[10px] rounded-[12px] px-[20px] py-[10px] submit"
+                  style="border: '2px solid #E2E8F0'"
+                >
+                  <input
+                    type="text"
+                    [ngModel]="newMessage"
+                    (ngModelChange)="modelChangeFn($event)"
+                    placeholder="Type a message"
+                    class="text-[14px] leading-[150%] font-normal opacity-40 text-[#333333] w-full h-full bg-transparent outline-none input font-inter"
+                  />
+                  <span class="font-normal text-black ml-[20px]" (click)="sendMessage()">
+                    <svg width="22" height="21" viewBox="0 0 22 21" fill="none">
+                      <path
+                        d="M20.9609 1.94531L18.4609 18.1562C18.4219 18.5469 18.1875 18.8984 17.8359 19.0938C17.6406 19.1719 17.4453 19.25 17.2109 19.25C17.0547 19.25 16.8984 19.2109 16.7422 19.1328L11.9766 17.1406L9.98438 20.1094C9.82812 20.3828 9.55469 20.5 9.28125 20.5C8.85156 20.5 8.5 20.1484 8.5 19.7188V15.9688C8.5 15.6562 8.57812 15.3828 8.73438 15.1875L17.25 4.25L5.76562 14.6016L1.74219 12.9219C1.3125 12.7266 1 12.3359 1 11.8281C0.960938 11.2812 1.19531 10.8906 1.625 10.6562L19.125 0.695312C19.5156 0.460938 20.0625 0.460938 20.4531 0.734375C20.8438 1.00781 21.0391 1.47656 20.9609 1.94531Z"
+                        fill="#615EF0"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </section>
+            <div class="mx-[24px] mt-[24px] flex flex-col gap-[20px]">
+              <app-item-chat class="order-1 overflow-y-auto"></app-item-chat>
+            </div>
+          </div>
+          <div class="w-[20%] h-full" style="border-left: '1px solid rgba(0, 0, 0, 0.08)'">
+            <header class="justify-between flex px-[24px] h-[76px] items-center" style="border-bottom: '1px solid rgba(0, 0, 0, 0.08)'">
+              <div class="flex justify-center items-center gap-[6px]">
+                <h2 class="text-[20px] leading-[150%] font-bold text-black">Directory</h2>
+              </div>
+              <svg width="35" height="35" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5 8.33333C4.08334 8.33333 3.33334 9.08333 3.33334 10C3.33334 10.9167 4.08334 11.6667 5 11.6667C5.91667 11.6667 6.66667 10.9167 6.66667 10C6.66667 9.08333 5.91667 8.33333 5 8.33333ZM15 8.33333C14.0833 8.33333 13.3333 9.08333 13.3333 10C13.3333 10.9167 14.0833 11.6667 15 11.6667C15.9167 11.6667 16.6667 10.9167 16.6667 10C16.6667 9.08333 15.9167 8.33333 15 8.33333ZM10 8.33333C9.08334 8.33333 8.33334 9.08333 8.33334 10C8.33334 10.9167 9.08334 11.6667 10 11.6667C10.9167 11.6667 11.6667 10.9167 11.6667 10C11.6667 9.08333 10.9167 8.33333 10 8.33333Z"
+                  fill="#B8BFCC"
+                />
+              </svg>
+            </header>
+            <div class="h-[91%] flex flex-col overflow-hidden justify-between">
+              <section class="flex-col items-center py-[20px] gap-[10px] grid justify-center" style="border-bottom: '1px solid rgba(0, 0, 0, 0.08)'">
+                <div class="w-full items-center justify-center flex flex-col">
+                  <div class="w-[130px] h-[130px] flex items-center justify-center text-center">
+                    <img src="../../assets/img/Avatar_1.png" class="w-full h-full rounded-[50%]" alt="avatar" />
+                  </div>
+                  <h3 class="text-[16px] font-semibold leading-[150%] flex justify-center font-inter mt-[10px]">Chu Toàn</h3>
+                  <h1 class="text-[14px] leading-[150%] font-semibold text-center font-inter mt-[10px]">Trương Văn Chu Toàn</h1>
+                </div>
+              </section>
+              <section class="flex-1 py-[20px]"></section>
+              <section style="border-top: '1px solid rgba(0, 0, 0, 0.08)'">
+                <div class="overflow-y-auto">
+                  <ul class="py-[13px] px-[16px] gap-1">
+                    <ng-container *ngFor="let item of chatMenu">
+                      <li class="h-[45px] flex items-center cursor-pointer duration-2000 hover-menu-chat">
+                        <div class="flex items-center gap-[65px]">
+                          <div class="flex gap-[20px]">
+                            <div class=""><img [src]="item.avatar" alt="avatar" class="w-[100%] h-[100%]" /></div>
+                            <a
+                              [routerLink]="['/chat']"
+                              class="hover:text-[#606C80] font-inter text-[12px] flex items-center font-extrabold text-[#606C80] no-underline"
+                              >{{ item.name }}</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                    </ng-container>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
