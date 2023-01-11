@@ -10,11 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-/package.json
-/package.lock.json
 
-.package.json
-.package.lock.json
 # IDEs and editors
 .idea/
 .project

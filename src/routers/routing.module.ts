@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'chat',
     component: ChatComponent,
-    canActivate: [AppGuard],
+    // canActivate: [AppGuard],
   },
   {
     path: 'product',
