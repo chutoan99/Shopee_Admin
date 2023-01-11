@@ -13,7 +13,13 @@ export class ProductComponent implements OnInit {
   dataSources$!: Observable<Product[]>;
 
   ngOnInit(): void {
-    this.dataSources$ = this.productService.getAllProduct('shopid=88201679');
+    const payload = {
+      page: 1,
+      limit: 96,
+      shopid: 88201679,
+    };
+    console.log;
+    this.dataSources$ = this.productService.getAllProduct(payload);
   }
 
   constructor(private productService: ProductService) {}

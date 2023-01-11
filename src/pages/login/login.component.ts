@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/services/login.service';
+import { AuthService } from 'src/services/auth.service';
 
 interface payload {
   email: string;
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
   token: string = '';
-  constructor(private httpService: LoginService, public router: Router) {}
+  constructor(private httpService: AuthService, public router: Router) {}
   ngOnInit(): void {}
   handleSubmit() {
     this.httpService.login(this.payload).subscribe((res: any) => {

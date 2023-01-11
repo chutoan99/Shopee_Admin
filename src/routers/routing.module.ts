@@ -10,6 +10,8 @@ import { ChatComponent } from '../pages/chat/chat.component';
 import { CommentComponent } from 'src/pages/comment/comment.component';
 import { DetailProductComponent } from 'src/pages/product/detailProduct/detailProduct.component';
 import { ShipRouteComponent } from 'src/pages/ship-route/ship-route.component';
+import { environment } from 'src/environments/environment';
+import { AppGuard } from 'src/app/app.guard';
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path: 'chat',
     component: ChatComponent,
+    canActivate: [AppGuard],
   },
   {
     path: 'product',
@@ -43,7 +46,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes, { enableTracing: !environment.production })],
   exports: [RouterModule],
 })
 export class RoutingModule {}

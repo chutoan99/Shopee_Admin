@@ -16,22 +16,22 @@
   transform-origin: bottom;
   animation: revealing-bars 4s linear infinite;
 }
-@keyframes loader-1-1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes revealing-bars {
-  0% {
-    transform: scaleY(0);
-  }
-  15% {
-    transform: scaleY(1);
-  }
-}
+// @keyframes loader-1-1 {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+// @keyframes revealing-bars {
+//   0% {
+//     transform: scaleY(0);
+//   }
+//   15% {
+//     transform: scaleY(1);
+//   }
+// }
 .app {
   background: rgba(255, 255, 255, 1);
   border-radius: 10px;

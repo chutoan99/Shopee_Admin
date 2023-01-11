@@ -12,8 +12,8 @@ export class ProductService {
   constructor(private http: HttpClient, private store: Store) {}
   // Observable biến hứng
   public total$ = new BehaviorSubject<number>(1);
-  getAllProduct(query: any): Observable<any> {
-    return this.http.get(`${OVERVIEW}/?${query}`).pipe(
+  getAllProduct(payload: any): Observable<any> {
+    return this.http.get(`${OVERVIEW}/?page=${payload.page}&limit=${payload.limit}&shopid=${payload.shopid}`).pipe(
       tap((res: any) => {
         return this.total$.next(res.response.count);
       }),
