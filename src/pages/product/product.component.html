@@ -9,7 +9,7 @@
         <div class="flex-1 p-[20px]">
           <div class="flex-1 pb-[20px]">
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-              <app-product-table [total]="total" [isModal]="isModal" [dataSources$]="dataSources$"> </app-product-table>
+              <app-product-table [isModal]="isModal" [dataSources$]="dataSources$"> </app-product-table>
               <app-product-pagination></app-product-pagination>
             </div>
             <ng-container *ngIf="isModal">

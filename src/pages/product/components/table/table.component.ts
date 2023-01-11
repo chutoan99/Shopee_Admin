@@ -12,7 +12,6 @@ export class ProductTableComponent implements OnInit {
   isModalDropDown: boolean = false;
   @Input() isModal: boolean = false;
   @Input() dataSources$!: Observable<Product[]>;
-  @Input() total: any;
   IS_STT: boolean = false;
   IS_ID: boolean = false;
   IS_IMGAGE: boolean = true;
