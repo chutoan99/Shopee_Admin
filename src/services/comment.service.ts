@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, tap, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { COMMENT } from '../api/endpoint';
+import { COMMENT } from './endpoint';
 import { Store } from '@ngrx/store';
 import { getAllSuccess } from '../shared/comment/comment.actions';
 import { Comment } from 'src/types/comment';

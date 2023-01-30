@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { getAllSuccess } from 'src/shared/product/product.actions';
-import { OVERVIEW } from 'src/api/endpoint';
+import { OVERVIEW } from './endpoint';
 
 @Injectable({
   providedIn: 'root',

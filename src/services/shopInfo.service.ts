@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SHOP_INFO } from 'src/api/endpoint';
+import { SHOP_INFO } from './endpoint';
 
 @Injectable({
   providedIn: 'root',

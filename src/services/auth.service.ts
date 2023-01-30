@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LOGIN } from 'src/api/endpoint';
+import { LOGIN } from './endpoint';
 
 @Injectable({
   providedIn: 'root',
