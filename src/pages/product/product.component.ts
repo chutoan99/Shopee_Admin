@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/services/product.service';
 import { Product } from 'src/types/product';
 import { Observable } from 'rxjs';
+import { AppState } from 'src/shared/app.state';
+import { select, Store } from '@ngrx/store';
+import { shopidSelector } from 'src/shared/inforShop/inforShop.selector';
 
 @Component({
   selector: 'app-home',
@@ -11,16 +14,16 @@ import { Observable } from 'rxjs';
 export class ProductComponent implements OnInit {
   isModal: boolean = false;
   dataSources$!: Observable<Product[]>;
-
+  constructor(private productService: ProductService, private store: Store<AppState>) {}
   ngOnInit(): void {
-    const payload = {
+    const query = {
       page: 1,
       limit: 96,
       shopid: 88201679,
     };
-    console.log;
-    this.dataSources$ = this.productService.getAllProduct(payload);
+    this.store.pipe(select(shopidSelector)).subscribe((res: number) => {
+      query.shopid = res;
+      if (res) this.dataSources$ = this.productService.getAllProduct(query);
+    });
   }
-
-  constructor(private productService: ProductService) {}
 }

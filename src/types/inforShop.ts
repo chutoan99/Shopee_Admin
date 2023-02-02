@@ -1,4 +1,4 @@
-export interface inforShop {
+export interface InforShop {
   id: number;
   shopid: number;
   userid: number;
@@ -22,6 +22,7 @@ export interface inforShop {
   mtime: Date;
   response_rate: number;
   country: string;
+  last_active_time: number;
   createdAt: Date;
   updatedAt: Date;
 }

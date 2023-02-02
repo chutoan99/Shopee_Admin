@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { map, Observable, of } from 'rxjs';
 import { ShopInfoService } from 'src/services/shopInfo.service';
-import { inforShop } from 'src/types/inforShop';
+import { AppState } from 'src/shared/app.state';
+import { getAllSuccess } from 'src/shared/inforShop/inforShop.actions';
+import { InforShop } from 'src/types/inforShop';
+import { InfoShopResponse } from 'src/types/response/shopInfo';
 import { header } from 'src/utils/orthers';
 @Component({
   selector: 'app-header',
@@ -10,12 +14,17 @@ import { header } from 'src/utils/orthers';
 })
 export class HeaderComponent implements OnInit {
   header: any = header;
-  inforShop: any;
-  constructor(private shopInfoService: ShopInfoService) {}
-
+  inforShop$!: InforShop;
+  constructor(private shopInfoService: ShopInfoService, private store: Store<AppState>) {}
+  shopid: any;
   ngOnInit(): void {
-    this.shopInfoService.getInfoShop(88201679).subscribe((res: any) => {
-      this.inforShop = res.response;
+    const xx = localStorage.getItem('shopid');
+    if (xx !== null) {
+      this.shopid = +xx;
+    }
+    this.shopInfoService.getInfoShop(this.shopid).subscribe((res: InfoShopResponse) => {
+      this.store.dispatch(getAllSuccess(res.response));
+      this.inforShop$ = res.response;
     });
   }
 }

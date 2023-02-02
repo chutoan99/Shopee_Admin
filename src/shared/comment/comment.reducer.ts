@@ -1,39 +1,36 @@
-import { Actions } from '@ngrx/effects';
 import { createReducer, on } from '@ngrx/store';
 import * as CommentActions from './comment.actions';
 import { Comment } from '../../types/comment';
 
 export interface CommentState {
   items: Comment[];
-  status: 'loading' | 'loaded' | 'error';
-  error?: string;
+  success: boolean;
+  error: boolean | string;
 }
 
 const initialState: CommentState = {
   items: [],
-  status: 'loaded',
-  error: '',
+  success: false,
+  error: false,
 };
 
 // // cách viết 1
 export const commentReducer = createReducer(
   initialState,
   // get all
-  on(CommentActions.getAllComment, (state: any) => ({
+  on(CommentActions.getAllStart, (state: CommentState) => ({
     ...state,
-    status: 'loading',
   })),
 
-  on(CommentActions.getAllSuccess, (state: any, action: any) => ({
+  on(CommentActions.getAllSuccess, (state: CommentState, action: any) => ({
     ...state,
-    status: 'loaded',
+    success: true,
     items: action,
-    error: '',
   })),
 
-  on(CommentActions.getAllFailed, (state: any, action: any) => ({
-    ...state,
-    status: 'error',
+  on(CommentActions.getAllFailed, (state: CommentState, action: any) => ({
+    items: [],
+    success: false,
     error: action.error,
   }))
 );

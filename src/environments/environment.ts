@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  BASE_URL: 'https://servershopee-production.up.railway.app',
+  BASE_URL: 'http://localhost:8080',
   firebase: {
     projectId: 'shopee-1116a',
     apiKey: 'AIzaSyCce4lFiYYm9p7hh4WIGv0rNkQhaziFhw0',

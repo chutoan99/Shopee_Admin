@@ -16,6 +16,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AppGuard],
   },
   {
     path: 'login',
@@ -24,23 +25,32 @@ const routes: Routes = [
   {
     path: 'chat',
     component: ChatComponent,
-    // canActivate: [AppGuard],
+    canActivate: [AppGuard],
   },
   {
     path: 'product',
-    component: ProductComponent,
+    canActivate: [AppGuard],
+    children: [
+      {
+        path: '',
+        component: ProductComponent,
+      },
+      {
+        path: 'detail/:itemid',
+        component: DetailProductComponent,
+      },
+    ],
   },
-  {
-    path: 'detail/:itemid',
-    component: DetailProductComponent,
-  },
+
   {
     path: 'comments',
     component: CommentComponent,
+    canActivate: [AppGuard],
   },
   {
     path: 'ship',
     component: ShipRouteComponent,
+    canActivate: [AppGuard],
   },
 ];
 

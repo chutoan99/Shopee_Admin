@@ -6,4 +6,6 @@ const featureProduct = createFeatureSelector<ProductState>('product'); // tên m
 // lấy  ra các giá trị lưu trong store có thể lấy tất cả,
 // trong trường hợp này thì chỉ lấy item trong post
 
-export const productSelector = createSelector(featureProduct, (state) => state.items);
+export const productSelector = createSelector(featureProduct, (state) => {
+  return state.items;
+});

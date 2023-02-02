@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LOGIN } from './endpoint';
+import { AuthResponse } from 'src/types/response/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -14,15 +15,18 @@ export class AuthService {
     const options = {
       headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'),
     };
-
-    return this.http.post<any>(LOGIN, payload, options);
+    return this.http.post<AuthResponse>(LOGIN, payload, options);
   }
 
   saveToken(token: string) {
-    sessionStorage.setItem('shopee-token', token);
+    localStorage.setItem('shopee-token', token);
   }
 
-  getToken(token: string) {
-    sessionStorage.getItem('shopee-token');
+  getToken() {
+    return localStorage.getItem('shopee-token');
+  }
+
+  deleteToken() {
+    localStorage.removeItem('shopee-token');
   }
 }

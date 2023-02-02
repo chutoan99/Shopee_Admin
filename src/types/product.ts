@@ -2,6 +2,7 @@ export interface Product {
   id: number;
   itemid: number;
   shopid: number;
+  catid: number;
   name: string;
   image: string;
   historical_sold: number;
@@ -14,6 +15,12 @@ export interface Product {
   discount: string;
   shop_rating: number;
   filename: null;
+  shop_name: string;
+  liked: number;
+  ctime: Date;
+  show_free_shipping: number;
+  is_official_shop: number;
+  is_service_by_shopee: number;
   createdAt: Date;
   updatedAt: Date;
 }
