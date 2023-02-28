@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { getAllSuccess } from 'src/shared/product/product.actions';
-import { OVERVIEW } from './endpoint';
+import { OVERVIEW_URL } from './endpoint';
 import { ProductResponse } from 'src/types/response/product';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class ProductService {
     const options = {
       params: new HttpParams().set('page', query.page).set('limit', query.limit).set('shopid', query.shopid),
     };
-    return this.http.get<ProductResponse>(`${OVERVIEW}`, options).pipe(
+    return this.http.get<ProductResponse>(`${OVERVIEW_URL}`, options).pipe(
       tap((res: ProductResponse) => {
         return this.total$.next(res.response.count);
       }),

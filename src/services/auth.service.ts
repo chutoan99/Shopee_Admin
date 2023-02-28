@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LOGIN } from './endpoint';
+import { LOGIN_URL } from './endpoint';
 import { AuthResponse } from 'src/types/response/auth';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class AuthService {
     const options = {
       headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'),
     };
-    return this.http.post<AuthResponse>(LOGIN, payload, options);
+    return this.http.post<AuthResponse>(LOGIN_URL, payload, options);
   }
 
   saveToken(token: string) {
