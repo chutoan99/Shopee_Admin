@@ -1,14 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-notify',
   templateUrl: './notify.component.html',
-  styleUrls: ['./notify.component.scss']
+  styleUrls: ['./notify.component.scss'],
 })
-export class NotifyComponent {
-  @Input() title: string =''
-  @Input() content: string =''
-  @Input() orderId: string =''
-  @Input() type: string =''
-  
+export class NotifyComponent implements OnInit {
+  @Input() title: string = '';
+  @Input() content: string = '';
+  @Input() orderId: string = '';
+  @Input() type: string = '';
+  isShowNotify: boolean = true;
+  ngOnInit() {
+    setTimeout(() => {
+      this.isShowNotify = false;
+    }, 15000);
+  }
 }

@@ -6,8 +6,8 @@ export const navigation = [
   },
 
   {
-    path: '/',
-    icon: '../assets/svg/menu/Devices_solid.svg',
+    path: '/orders',
+    icon: '../assets/svg/menu/cart.svg',
     name: 'Orders',
   },
   {
@@ -17,32 +17,33 @@ export const navigation = [
   },
   {
     path: '/product',
-    icon: '../assets/svg/menu/Chat_solid.svg',
+    icon: '../assets/svg/menu/items.svg',
     name: 'Products',
   },
-  {
-    path: '/',
-    icon: '../assets/svg/menu/Customization_solid.svg',
-    name: 'Analytics',
-  },
-  {
-    path: '/',
-    icon: '../assets/svg/menu/Customization_solid.svg',
-    name: 'Settings',
-  },
+
   {
     path: '/ship',
-    icon: '../assets/svg/menu/routing-2.svg',
+    icon: '../assets/svg/menu/shiper.svg',
     name: 'Ship',
   },
   {
     path: '/chat',
-    icon: '../assets/svg/menu/inbox.svg',
+    icon: '../assets/svg/menu/chat.svg',
     name: 'Chat',
   },
   {
+    path: '/reports',
+    icon: '../assets/svg/menu/report.svg',
+    name: 'Report',
+  },
+  {
+    path: '/settings',
+    icon: '../assets/svg/menu/settings.svg',
+    name: 'Settings',
+  },
+  {
     path: '/',
-    icon: '../assets/svg/menu/Customization_solid.svg',
-    name: 'logout',
+    icon: '../assets/svg/menu/log.svg',
+    name: 'Logout',
   },
 ];

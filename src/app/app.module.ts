@@ -20,7 +20,10 @@ import { CommentModule } from 'src/pages/comment/comment.module';
 import { ShipRouteModule } from 'src/pages/ship-route/ship-route.module';
 import { ProductModule } from 'src/pages/product/product.module';
 import { HomeModule } from 'src/pages/home/home.module';
-
+import { OrderModule } from 'src/pages/order/order.module';
+import { ReportModule } from 'src/pages/report/report.module';
+import { SettingModule } from 'src/pages/setting/setting.module';
+import { UserModule } from 'src/pages/user/user.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -29,11 +32,15 @@ import { HomeModule } from 'src/pages/home/home.module';
     ShipRouteModule,
     LoginModule,
     ChatModule,
+    UserModule,
     HomeModule,
     ProductModule,
+    OrderModule,
+    SettingModule,
     RoutingModule,
     CommentModule,
     FormsModule,
+    ReportModule,
     HttpClientModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),

@@ -10,8 +10,12 @@ import { ChatComponent } from '../pages/chat/chat.component';
 import { CommentComponent } from 'src/pages/comment/comment.component';
 import { DetailProductComponent } from 'src/pages/product/detailProduct/detailProduct.component';
 import { ShipRouteComponent } from 'src/pages/ship-route/ship-route.component';
+import { OrderComponent } from 'src/pages/order/order.component';
 import { environment } from 'src/environments/environment';
 import { AppGuard } from 'src/app/app.guard';
+import { ReportComponent } from 'src/pages/report/report.component';
+import { SettingComponent } from 'src/pages/setting/setting.component';
+import { UserComponent } from 'src/pages/user/user.component';
 const routes: Routes = [
   {
     path: '',
@@ -48,8 +52,28 @@ const routes: Routes = [
     canActivate: [AppGuard],
   },
   {
+    path: 'orders',
+    component: OrderComponent,
+    canActivate: [AppGuard],
+  },
+  {
+    path: 'reports',
+    component: ReportComponent,
+    canActivate: [AppGuard],
+  },
+  {
+    path: 'settings',
+    component: SettingComponent,
+    canActivate: [AppGuard],
+  },
+  {
     path: 'ship',
     component: ShipRouteComponent,
+    canActivate: [AppGuard],
+  },
+  {
+    path: 'user',
+    component: UserComponent,
     canActivate: [AppGuard],
   },
 ];
