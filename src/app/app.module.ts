@@ -24,6 +24,13 @@ import { OrderModule } from 'src/pages/order/order.module';
 import { ReportModule } from 'src/pages/report/report.module';
 import { SettingModule } from 'src/pages/setting/setting.module';
 import { UserModule } from 'src/pages/user/user.module';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+
+registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -48,7 +55,7 @@ import { UserModule } from 'src/pages/user/user.module';
     EffectsModule.forRoot([]),
   ],
 
-  providers: [SocketioService],
+  providers: [SocketioService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

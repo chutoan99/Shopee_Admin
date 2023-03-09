@@ -8,6 +8,7 @@ import { AsideModule } from 'src/components/aside/aside.module';
 import { HeaderModule } from 'src/components/header/header.module';
 import { OrderComponent } from './order.component';
 
+
 @NgModule({
   declarations: [OrderComponent],
   imports: [CommonModule, HeaderModule, AsideModule, RouterModule, HttpClientModule, BrowserModule, FormsModule],

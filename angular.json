@@ -23,8 +23,22 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "src/assets/svg/*"],
-            "styles": ["src/styles.scss", "./node_modules/bootstrap/dist/css/bootstrap.min.css"],
+            "assets": [
+              "src/assets",
+              "src/assets/svg/*",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "src/theme.less",
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "./node_modules/leaflet/dist/leaflet.css"
+            ],
             "scripts": ["./node_modules/jquery/dist/jquery.min.js", "./node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
