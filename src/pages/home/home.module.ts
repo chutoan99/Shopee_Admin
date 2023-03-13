@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './components/main/main.component';
 import { HomeComponent } from './home.component';
 import { Row3Component } from './components/row3/row3.component';
 import { Row1Component } from './components/row1/row1.component';
@@ -17,7 +16,7 @@ import { HeaderModule } from 'src/components/header/header.module';
 import { NotifyModule } from 'src/components/notify/notify.module';
 
 @NgModule({
-  declarations: [MainComponent, HomeComponent, Row3Component, Row1Component, Row2Component, Row4Component, BarChartComponent, LineChartComponent],
+  declarations: [HomeComponent, Row3Component, Row1Component, Row2Component, Row4Component, BarChartComponent, LineChartComponent],
   imports: [CommonModule, FormsModule, BrowserModule, HttpClientModule, RouterModule, AsideModule, HeaderModule, NotifyModule],
 })
 export class HomeModule {}

@@ -6,14 +6,12 @@ import { AppState } from 'src/shared/app.state';
 import { getAllSuccess } from 'src/shared/inforShop/inforShop.actions';
 import { InforShop } from 'src/types/inforShop';
 import { InfoShopResponse } from 'src/types/response/shopInfo';
-import { header } from 'src/utils/orthers';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  header: any = header;
   inforShop$!: InforShop;
   constructor(private shopInfoService: ShopInfoService, private store: Store<AppState>) {}
   shopid: any;

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,component.ts,jsx,tsx}', './src/**/*.{html,js}'],
+  content: ['./src/**/*.{js,component.ts,jsx,tsx}', './src/**/*.{html,js}', './node_modules/flowbite/**/*.js'],
   theme: {
     fontFamily: {
       inter: ['Inter'],
@@ -10,5 +10,5 @@ module.exports = {
       green: '#14804A',
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };

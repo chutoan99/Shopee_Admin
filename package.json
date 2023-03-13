@@ -27,6 +27,7 @@
     "boostrap": "^2.0.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.1.1",
+    "flowbite": "^1.6.4",
     "jquery": "^3.6.1",
     "leaflet": "^1.9.3",
     "ng-zorro-antd": "^15.0.3",

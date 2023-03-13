@@ -1,12 +1,5 @@
 <div class="flex w-[100%] px-[26px] gap-[62px] py-[29px]">
   <div class="flex justify-between w-full">
-    <ul class="flex gap-[24px] pl-[unset] mb-[unset] items-center">
-      <ng-container *ngFor="let item of header">
-        <li class="cursor-pointer hover-header duration-2000">
-          <a class="hover:text-[#333333] text-[12px] leading-[20px] text-[#333333] font-bold no-underline font-inter">{{ item }}</a>
-        </li>
-      </ng-container>
-    </ul>
     <div class="flex gap-[10px] items-center">
       <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px]">
         <path
@@ -23,7 +16,7 @@
     <div class="flex items-center justify-between gap-[15px]">
       <div class="flex gap-[20px] items-center" [routerLink]="['/user']">
         <div class="w-[40px] h-[40px]">
-          <img [src]="inforShop$?.portrait" class="w-full h-full rounded-[50%]" />
+          <img [src]="inforShop$?.portrait" class="w-full h-full rounded-[50%]" alt="avartarShop" />
         </div>
         <div class="flex flex-col">
           <span class="text-[#294566] text-[12px] leading-[20px] font-extrabold font-inter">{{ inforShop$?.username }}</span>
