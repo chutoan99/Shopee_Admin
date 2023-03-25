@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CommentService } from 'src/services/comment.service';
 import { AppState } from 'src/shared/app.state';
 import { shopidSelector } from 'src/shared/inforShop/inforShop.selector';
-import { Comment } from 'src/types/comment';
+import { Comment } from 'src/types/comment.model';
 
 @Component({
   selector: 'app-comment',
@@ -13,12 +13,15 @@ import { Comment } from 'src/types/comment';
 })
 export class CommentComponent {
   dataSources$!: Observable<Comment[]>;
-  shopid!: number;
+  query = {
+    page: 1,
+    limit: 96,
+  };
   constructor(private commentService: CommentService, private store: Store<AppState>) {}
+
   ngOnInit(): void {
-    this.store.pipe(select(shopidSelector)).subscribe((res: number) => {
-      this.shopid = res;
-      if (this.shopid) this.dataSources$ = this.commentService.getAllComment(this.shopid);
+    this.commentService.getAllComment(this.query).subscribe((data: Comment[]) => {
+      this.dataSources$ = of(data);
     });
   }
 }

@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  BASE_URL: 'http://localhost:8080',
+  production: true,
+  BASE_URL: 'http://localhost:8080/api/admin',
   firebase: {
     projectId: 'shopee-1116a',
     apiKey: 'AIzaSyCce4lFiYYm9p7hh4WIGv0rNkQhaziFhw0',

@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from 'src/services/product.service';
-import { Product } from 'src/types/product';
+import { Product } from 'src/types/product.model';
 import { Observable, of } from 'rxjs';
 import { AppState } from 'src/shared/app.state';
-import { select, Store } from '@ngrx/store';
-import { shopidSelector } from 'src/shared/inforShop/inforShop.selector';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +12,10 @@ import { shopidSelector } from 'src/shared/inforShop/inforShop.selector';
 export class ProductListComponent {
   dataSources$!: Observable<Product[]>;
   loading = false;
-  listOfData: Product[] = [];
+  query = {
+    page: 1,
+    limit: 96,
+  };
   getNumber(discount: String) {
     let xx: Number = +discount.replace(/[^0-9]/g, '');
     let resuft: boolean = false;
@@ -26,22 +27,10 @@ export class ProductListComponent {
     return resuft;
   }
   ngOnInit(): void {
-    const query = {
-      page: 1,
-      limit: 96,
-      shopid: 88201679,
-    };
-    this.store.pipe(select(shopidSelector)).subscribe((res: number) => {
-      query.shopid = res;
-      if (res) this.dataSources$ = this.productService.getAllProduct(query);
-      if (res) {
-        this.productService.getAllProduct(query).subscribe((data: Product[]) => {
-          this.listOfData = data;
-          console.log(this.listOfData, 'lis');
-        });
-      }
+    this.productService.getAllProduct(this.query).subscribe((data: Product[]) => {
+      this.dataSources$ = of(data);
     });
   }
 
-  constructor(private productService: ProductService, private store: Store<AppState>) {}
+  constructor(private productService: ProductService) {}
 }

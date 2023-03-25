@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LOGIN_URL } from './endpoint';
-import { AuthResponse } from 'src/types/response/auth';
+import { URL_LOGIN } from './endpoint';
+import { AuthResponse } from 'src/types/response/auth.response';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
-  // Observable biến hứng
+  public isLogout$ = new BehaviorSubject<Boolean>(false);
 
   login(payload: any): Observable<any> {
     const options = {
       headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'),
     };
-    return this.http.post<AuthResponse>(LOGIN_URL, payload, options);
+    return this.http.post<AuthResponse>(`${environment.BASE_URL}/${URL_LOGIN}`, payload, options);
+  }
+
+  getHeader() {
+    return 'Bearer ' + localStorage.getItem('shopee-token');
   }
 
   saveToken(token: string) {
@@ -29,4 +34,10 @@ export class AuthService {
   deleteToken() {
     localStorage.removeItem('shopee-token');
   }
+  logout() {
+    localStorage.removeItem('shopee-token');
+    this.isLogout$.next(true);
+    this.router.navigate(['/login']);
+  }
+  constructor(private http: HttpClient, private router: Router) {}
 }

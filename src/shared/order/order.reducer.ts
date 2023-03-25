@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as OrderActions from './order.actions';
-import { Order } from '../../types/order';
+import { Order } from '../../types/order.model';
 
 export interface OrderState {
   items: Order[];

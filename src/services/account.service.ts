@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { URL_INFO_SHOP } from './endpoint';
-import { InfoShopResponse } from 'src/types/response/shopInfo.response';
+import { URL_INFO_ACCOUNT } from './endpoint';
 import { AuthService } from './auth.service';
 import { environment } from '../environments/environment';
-import { Observable } from 'rxjs';
+import { AccountResponse } from 'src/types/response/account.response';
 @Injectable({
   providedIn: 'root',
 })
-export class ShopInfoService {
+export class AccountService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  getInfoShop(): Observable<InfoShopResponse> {
+  getAccount() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: this.authService.getHeader(),
       }),
     };
-    return this.http.get<InfoShopResponse>(`${environment.BASE_URL}/${URL_INFO_SHOP}`, httpOptions);
+    return this.http.get<AccountResponse>(`${environment.BASE_URL}/${URL_INFO_ACCOUNT}`, httpOptions);
   }
-
-  UpdateInfoShop(): Observable<any> {
+  UpdateAccount() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -29,16 +27,13 @@ export class ShopInfoService {
       }),
     };
     const payload = {
-      is_official_shop: true,
+      email: '',
+      sex: 0,
       name: '',
-      cover: '',
-      status: 1,
-      shop_location: '',
-      username: '',
-      portrait: '',
-      description: '',
-      country: '',
+      address: '',
+      birthday: '',
+      phone: 0,
     };
-    return this.http.put<any>(`${environment.BASE_URL}/${URL_INFO_SHOP}`, payload, httpOptions);
+    return this.http.put<any>(`${environment.BASE_URL}/${URL_INFO_ACCOUNT}`, payload, httpOptions);
   }
 }

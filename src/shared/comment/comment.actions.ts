@@ -1,5 +1,5 @@
 import { ActionType, createAction, props } from '@ngrx/store';
-import { Comment } from '../../types/comment';
+import { Comment } from '../../types/comment.model';
 
 export const GET_COMMENTS_START = '@Comment/GetAll';
 export const GET_COMMENTS_SUCCESS = '@Comment/GetAllSuccess';

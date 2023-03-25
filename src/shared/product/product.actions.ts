@@ -1,5 +1,5 @@
 import { ActionType, createAction, props } from '@ngrx/store';
-import { Product } from '../../types/product';
+import { Product } from '../../types/product.model';
 
 export const GET_PRODUCTS = '@Product/GetAll';
 export const GET_PRODUCTS_SUCCESS = '@Product/GetAllSuccess';

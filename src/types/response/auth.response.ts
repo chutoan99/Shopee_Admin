@@ -1,4 +1,4 @@
-import { Auth } from '../auth';
+import { Auth } from '../auth.model';
 
 export interface AuthResponse {
   err: number;

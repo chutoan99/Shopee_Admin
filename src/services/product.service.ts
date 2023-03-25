@@ -1,24 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { BehaviorSubject, map, Observable, tap, catchError } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { getAllSuccess } from 'src/shared/product/product.actions';
-import { OVERVIEW_URL } from './endpoint';
-import { ProductResponse } from 'src/types/response/product';
+import { URL_PRODUCT } from './endpoint';
+import { ProductResponse } from 'src/types/response/product.response';
+import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment';
+import { Product } from 'src/types/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient, private store: Store) {}
-  // Observable biến hứng
   public total$ = new BehaviorSubject<number>(1);
 
-  getAllProduct(query: any): Observable<any> {
-    const options = {
-      params: new HttpParams().set('page', query.page).set('limit', query.limit).set('shopid', query.shopid),
+  getAllProduct(query: any): Observable<Product[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.authService.getHeader(),
+      }),
+      params: new HttpParams().set('page', query.page).set('limit', query.limit),
     };
-    return this.http.get<ProductResponse>(`${OVERVIEW_URL}`, options).pipe(
+    return this.http.get<ProductResponse>(`${environment.BASE_URL}/${URL_PRODUCT}`, httpOptions).pipe(
       tap((res: ProductResponse) => {
         return this.total$.next(res.response.count);
       }),
@@ -28,4 +33,6 @@ export class ProductService {
       })
     );
   }
+
+  constructor(private http: HttpClient, private authService: AuthService, private store: Store) {}
 }

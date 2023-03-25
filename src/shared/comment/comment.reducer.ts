@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as CommentActions from './comment.actions';
-import { Comment } from '../../types/comment';
+import { Comment } from '../../types/comment.model';
 
 export interface CommentState {
   items: Comment[];

@@ -1,4 +1,4 @@
-import { Order } from '../order';
+import { Order } from '../order.model';
 export interface OrderResponse {
   err: number;
   msg: string;

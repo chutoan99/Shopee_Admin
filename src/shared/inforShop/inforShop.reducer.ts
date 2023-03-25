@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as InForShopActions from './inforShop.actions';
-import { InforShop } from '../../types/inforShop';
+import { InforShop } from '../../types/inforShop.model';
 
 export interface InforShopState {
   items: InforShop;

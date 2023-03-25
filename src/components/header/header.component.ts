@@ -4,8 +4,8 @@ import { map, Observable, of } from 'rxjs';
 import { ShopInfoService } from 'src/services/shopInfo.service';
 import { AppState } from 'src/shared/app.state';
 import { getAllSuccess } from 'src/shared/inforShop/inforShop.actions';
-import { InforShop } from 'src/types/inforShop';
-import { InfoShopResponse } from 'src/types/response/shopInfo';
+import { InforShop } from 'src/types/inforShop.model';
+import { InfoShopResponse } from 'src/types/response/shopInfo.response';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,15 +14,11 @@ import { InfoShopResponse } from 'src/types/response/shopInfo';
 export class HeaderComponent implements OnInit {
   inforShop$!: InforShop;
   constructor(private shopInfoService: ShopInfoService, private store: Store<AppState>) {}
-  shopid: any;
   ngOnInit(): void {
-    const xx = localStorage.getItem('shopid');
-    if (xx !== null) {
-      this.shopid = +xx;
-    }
-    this.shopInfoService.getInfoShop(this.shopid).subscribe((res: InfoShopResponse) => {
+    this.shopInfoService.getInfoShop().subscribe((res: InfoShopResponse) => {
       this.store.dispatch(getAllSuccess(res.response));
       this.inforShop$ = res.response;
+      console.log(res, 'response');
     });
   }
 }

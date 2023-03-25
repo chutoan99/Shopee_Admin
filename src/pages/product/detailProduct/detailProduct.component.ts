@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductService } from 'src/services/product.service';
-import { Product } from 'src/types/product';
+import { Product } from 'src/types/product.model';
 
 @Component({
   selector: 'app-detail-product',
