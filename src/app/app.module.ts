@@ -29,7 +29,6 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 
-
 registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
@@ -48,10 +47,10 @@ registerLocaleData(en);
     CommentModule,
     FormsModule,
     ReportModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    BrowserAnimationsModule,
     EffectsModule.forRoot([]),
   ],
 

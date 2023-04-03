@@ -14,7 +14,6 @@ const initialState: CommentState = {
   error: false,
 };
 
-// // cách viết 1
 export const commentReducer = createReducer(
   initialState,
   // get all
@@ -34,37 +33,3 @@ export const commentReducer = createReducer(
     error: action.error,
   }))
 );
-
-// // cách viết 2
-
-// export function commentReducer(state: CommentState = initialState, action: CommentActions.CommentActions): CommentState {
-//   console.log(action);
-//   switch (action.type) {
-//     // get all
-//     case CommentActions.GET_COMMENTS:
-//       return {
-//         ...state,
-//         items : action.payload
-//         status: 'loading',
-//       };
-
-//     case CommentActions.GET_COMMENTS_SUCCESS:
-//       return {
-//         ...state,
-//         status: 'loaded',
-//         items: action.Comments,
-//         error: '',
-//       };
-
-//     case CommentActions.GET_COMMENTS_FAILED:
-//       return {
-//         ...state,
-//         status: 'error',
-//         items: [],
-//         error: action.error,
-//       };
-
-//     default:
-//       return state;
-//   }
-// }
