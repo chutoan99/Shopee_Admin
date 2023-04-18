@@ -5,10 +5,5 @@ export interface CommentResponse {
   page: number;
   limit: number;
   totalPage: number;
-  response: Response;
-}
-
-export interface Response {
-  count: number;
-  rows: Comment[];
+  response: Comment[];
 }

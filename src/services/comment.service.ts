@@ -24,11 +24,11 @@ export class CommentService {
 
     return this.http.get<CommentResponse>(`${environment.BASE_URL}/${URL_COMMENT}`, httpOptions).pipe(
       tap((res: CommentResponse) => {
-        return this.total$.next(res?.response?.count);
+        return this.total$.next(res?.totalPage);
       }),
       map((res: any) => {
-        this.store.dispatch(getAllSuccess(res.response.rows));
-        return res.response.rows;
+        this.store.dispatch(getAllSuccess(res.response));
+        return res.response;
       })
     );
   }

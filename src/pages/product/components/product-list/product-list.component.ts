@@ -19,7 +19,7 @@ export class ProductListComponent {
   getNumber(discount: String) {
     let xx: Number = +discount.replace(/[^0-9]/g, '');
     let resuft: boolean = false;
-    if (xx >= 50) {
+    if (xx === 50) {
       resuft = true;
     } else {
       resuft = false;

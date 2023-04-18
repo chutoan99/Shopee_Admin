@@ -11,8 +11,8 @@ export interface Comment {
   like_count: number;
   comment: string;
   author_username: string;
-  author_portrait: null;
-  images: string;
+  author_portrait: null | string;
+  images: any;
   cover: string;
   videos: string;
   model_name: string;
@@ -22,4 +22,19 @@ export interface Comment {
   ctime: Date;
   createdAt: Date;
   updatedAt: Date;
+  CommentReply: CommentReply;
+}
+
+export interface CommentReply {
+  id: null;
+  orderid: null;
+  itemid: null;
+  cmtid: null;
+  userid: null;
+  shopid: null;
+  comment: null;
+  ctime: null;
+  mtime: null;
+  createdAt: null;
+  updatedAt: null;
 }
