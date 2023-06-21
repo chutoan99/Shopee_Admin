@@ -1,4 +1,4 @@
-export interface AccountShop {
+export interface User {
   id: number;
   sex: string;
   role: string;
