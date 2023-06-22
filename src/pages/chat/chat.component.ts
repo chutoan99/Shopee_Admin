@@ -33,7 +33,9 @@ export class ChatComponent implements OnInit {
   // socketio
   constructor(private socketService: SocketioService) {}
   ngOnInit(): void {
-    this.socketService.getMessage();
+    this.socketService.getNewMessage().subscribe((message: string) => {
+      console.log(message, 'message');
+    });
   }
 
   sendMessage() {
