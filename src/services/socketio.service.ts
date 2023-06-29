@@ -8,9 +8,10 @@ import { io, Socket } from 'socket.io-client';
 export class SocketioService {
   socket: Socket;
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
+
   constructor() {
-    this.socket = io('https://server-shopee.onrender.com');
-    this.socket.on('new message', (data: any) => {
+    this.socket = io('http://localhost:8000');
+    this.socket.on('message', (data: any) => {
       console.log(data);
     });
   }
@@ -19,8 +20,8 @@ export class SocketioService {
     this.socket.emit('message', data);
   }
 
-  getNewMessage = () => {
-    this.socket.on('message', (message) => {
+  getNewMessage = (): Observable<string> => {
+    this.socket.on('message', (message: string) => {
       this.message$.next(message);
     });
 
