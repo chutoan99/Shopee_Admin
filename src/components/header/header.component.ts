@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
     this.shopInfoService.getInfoShop().subscribe((res: InfoShopResponse) => {
       this.store.dispatch(getAllSuccess(res.response));
       this.inforShop$ = res.response;
-      console.log(res, 'response');
     });
   }
 }

@@ -16,10 +16,16 @@ import { AppGuard } from 'src/app/app.guard';
 import { ReportComponent } from 'src/pages/report/report.component';
 import { SettingComponent } from 'src/pages/setting/setting.component';
 import { UserComponent } from 'src/pages/user/user.component';
+import { IndexComponent } from 'src/pages/index/index.component';
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AppGuard],
+  },
+  {
+    path: 'index',
+    component: IndexComponent,
     canActivate: [AppGuard],
   },
   {

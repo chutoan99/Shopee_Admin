@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  BASE_URL: 'http://localhost:8000/api/admin',
+  // BASE_URL: 'https://server-shopee3.onrender.com/api/admin',
+  BASE_URL: ' http://localhost:8000/api/admin',
   firebase: {
     projectId: 'shopee-1116a',
     apiKey: 'AIzaSyCce4lFiYYm9p7hh4WIGv0rNkQhaziFhw0',

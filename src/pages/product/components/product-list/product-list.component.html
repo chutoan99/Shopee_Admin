@@ -30,7 +30,9 @@
         </div>
         <div class="flex items-center gap-[10px]">
           <div class="font-inter text-[14px] font-medium leading-[20px] text-[#687182] px-[4px] w-[20%]">
-            <img src="https://cf.shopee.vn/file/{{ data?.image }}" class="h-[60px] rounded-[5px]" alt="{{ data?.name }}" />
+            <div class="h-[60px] rounded-[5px]">
+              <img src="https://cf.shopee.vn/file/{{ data?.image }}" class="h-full" alt="{{ data?.name }}" />
+            </div>
           </div>
           <div class="flex flex-col gap-[5px] font-inter text-[14px] font-medium text-[#687182] px-[4px]">
             <div class="text-[#f8482f] flex items-center gap-[5px]">
