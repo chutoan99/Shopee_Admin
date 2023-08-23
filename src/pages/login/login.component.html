@@ -7,40 +7,68 @@
       />
     </svg>
   </label>
+
   <h2 style="font-size: 24px; font-weight: 600; letter-spacing: 1px; margin-bottom: 40px">Shop Example</h2>
-
-  <div class="flex gap-[10px] gap-y-[15px] flex-wrap justify-start h-full overflow-y-auto overflow-x-hidden" style="background-color: unset; color: unset">
-    <div
-      *ngFor="let data of dataSources$ | async; let i = index"
-      class="relative overflow-hidden shadow-lg flex flex-col items-center rounded-[10px] w-[180px] p-2 bg-white bg-clip-border shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none"
-    >
-      <div class="relative flex h-16 w-full justify-center rounded-md bg-cover">
-        <div style="position: absolute; inset: 0px; background-position: 50% center; background-size: cover; background-repeat: no-repeat; filter: blur(1px)">
-          <div style="position: absolute; inset: 0px; background-color: rgba(0, 0, 0, 0.6)">
-            <img src="{{ data?.portrait }}" class="absolute flex h-16 w-full justify-center rounded-md bg-cover" />
+  <div
+    class="flex gap-[10px] gap-y-[25px] flex-wrap justify-start h-full overflow-y-auto overflow-x-hidden"
+    style="background-color: unset; color: unset"
+  >
+    <div class="relative w-full overflow-hidden rounded h-[165px]" *ngFor="let data of dataSources$ | async; let i = index">
+      <div
+        class="absolute bg-[50%_center] bg-cover bg-no-repeat blur-[2px] m-1 inset-0"
+        [style.background-image]="'url(' + data?.portrait + ')'"
+      ></div>
+      <div class="absolute bg-[rgba(0,0,0,0.6)] inset-0"></div>
+      <div class="absolute left-0 right-0 top-0 bottom-0">
+        <div style="padding: 10px 30px">
+          <div class="flex gap-[15px]">
+            <a class="relative block h-20 w-20 shrink-0" href="">
+              <div class="block cursor-pointer select-none h-20 w-20 box-border relative border rounded-[50%] border-solid border-[rgba(0,0,0,0.09)]">
+                <div class="w-full relative bg-neutral-100 overflow-hidden pt-[100%] rounded-[50%]">
+                  <svg
+                    enableBackground="new 0 0 15 15"
+                    viewBox="0 0 15 15"
+                    class="stroke-[#c6c6c6] absolute -translate-x-2/4 -translate-y-2/4 text-2xl font-normal leading-8 left-2/4 top-2/4"
+                  >
+                    <g>
+                      <circle cx="7.5" cy="4.5" fill="none" r="3.8" strokeMiterlimit="{10}" />
+                      <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" strokeLinecap="round" strokeMiterlimit="{10}" />
+                    </g>
+                  </svg>
+                </div>
+                <img class="absolute w-full h-full block rounded-[50%] left-0 top-0" src="{{ data?.cover }}" alt="" />
+              </div>
+            </a>
+            <div class="relative flex mt-[0.625rem] flex-col">
+              <div
+                class="flex-col pl-[10px] rounded-[4px] w-full flex text-[white] text-[13px] font-medium transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem]"
+              >
+                <span class="w-full"> email: </span>
+                <span class="w-full"> admin{{ data.userid }}@gmail.com </span>
+              </div>
+              <div
+                class="flex-col pl-[10px] rounded-[4px] w-full flex text-[white] text-[13px] font-medium transition-[background-color] duration-[0.1s] ease-[cubic-bezier(0.4,0,0.6,1)] tracking-[0] px-0 py-[0.3125rem]"
+              >
+                <span class="w-full"> password: </span>
+                <span class="w-full"> {{ data.username }}{{ data.userid }} </span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="absolute -bottom-6 flex h-[50px] w-[50px] items-center justify-center rounded-full border-[2px] border-white bg-pink-400 dark:!border-navy-700">
-          <img class="h-full w-full rounded-full" src="{{ data?.cover }}" alt="" />
-        </div>
-      </div>
-      <div class="mt-8 flex flex-col items-center px-[5px]">
-        <h4 class="text-[15px] font-bold text-navy-700 dark:text-white text-center">{{ data?.username }}</h4>
 
-        <p class="text-[15px] font-normal text-gray-600 text-center">{{ data?.name }}</p>
-      </div>
-      <div class="mx-3 mb-2 flex justify-between w-full">
-        <div class="flex flex-col items-center justify-center">
-          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.item_count }}</p>
-          <p class="text-xs font-normal text-gray-600">Posts</p>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.follower_count }}</p>
-          <p class="text-xs font-normal text-gray-600">Followers</p>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.followed }}</p>
-          <p class="text-xs font-normal text-gray-600">Following</p>
+          <div class="mb-2 flex justify-between px-[10px]" style="margin-top: 15px">
+            <div class="flex flex-col items-center justify-center">
+              <p class="text-[15px] font-bold text-white dark:text-white">{{ data?.item_count }}</p>
+              <p class="text-xs font-normal text-white">Posts</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="text-[15px] font-bold text-white dark:text-white">{{ data?.follower_count }}</p>
+              <p class="text-xs font-normal text-white">Followers</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p class="text-[15px] font-bold text-white dark:text-white">{{ data?.followed }}</p>
+              <p class="text-xs font-normal text-white">Following</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
