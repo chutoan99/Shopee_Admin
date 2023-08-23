@@ -1,15 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
 import * as InForShopActions from './inforShop.actions';
-import { InforShop } from '../../types/inforShop.model';
+import { ShopInfor } from '../../types/inforShop.model';
 
 export interface InforShopState {
-  items: InforShop;
+  items: ShopInfor;
   success: boolean;
   error: string | boolean;
 }
 
 const initialState: InforShopState = {
-  items: {} as InforShop,
+  items: {} as ShopInfor,
   success: false,
   error: false,
 };

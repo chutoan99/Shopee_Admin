@@ -14,6 +14,6 @@ export class NotifyComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.isShowNotify = false;
-    }, 15000);
+    }, 5000);
   }
 }

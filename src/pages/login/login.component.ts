@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/services/auth.service';
-import { AuthResponse } from 'src/types/response/auth.response';
+import { Observable, of } from 'rxjs';
+import { AuthResponse } from 'src/services/auth/index.response';
+import { AuthService } from 'src/services/auth/index.service';
 
-interface payload {
+interface Payload {
   email: string;
   password: string;
+}
+interface QueryShops {
+  page: number;
+  limit: number;
 }
 
 @Component({
@@ -14,22 +19,39 @@ interface payload {
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  payload: payload = {
+  dataSources$!: Observable<any[]>;
+
+  payload: Payload = {
     email: '',
     password: '',
   };
 
+  query: QueryShops = {
+    page: 1,
+    limit: 800,
+  };
+
   handleSubmit() {
-    this.httpService.login(this.payload).subscribe((res: AuthResponse) => {
+    this.authService.login(this.payload).subscribe((res: AuthResponse) => {
       const token = res.access_token;
       if (token) {
         localStorage.setItem('shopid', JSON.stringify(res.response.shopid));
-        this.httpService.saveToken(token);
+        this.authService.saveToken(token);
         this.router.navigateByUrl('/');
       }
     });
   }
 
-  ngOnInit(): void {}
-  constructor(private httpService: AuthService, public router: Router) {}
+  fetchDataShops() {
+    this.authService.GetShops(this.query).subscribe((data: any[]) => {
+      console.log(data, 'dataa');
+      this.dataSources$ = of(data);
+    });
+  }
+
+  ngOnInit(): void {
+    this.fetchDataShops();
+  }
+
+  constructor(private authService: AuthService, public router: Router) {}
 }

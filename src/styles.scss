@@ -50,11 +50,6 @@ img,
 picture,
 video,
 canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
 input,
 button,
 textarea,
@@ -94,12 +89,14 @@ h6 {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-
-html,
-body {
-  height: 100%;
+app-ship-route {
+  height: 100% !important;
+  border-radius: 15px;
 }
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+app-chat {
+  height: 100% !important;
+}
+app-home {
+  height: 100% !important;
+  width: 100% !important;
 }

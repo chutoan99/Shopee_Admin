@@ -1,4 +1,4 @@
-export interface InforShop {
+export interface ShopInfor {
   id: number;
   shopid: number;
   userid: number;

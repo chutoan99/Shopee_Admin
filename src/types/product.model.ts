@@ -10,6 +10,7 @@ export interface Product {
   price_min: number;
   stock: number;
   price_max: number;
+  price_before_discount: number;
   price_min_before_discount: number;
   price_max_before_discount: number;
   discount: string;

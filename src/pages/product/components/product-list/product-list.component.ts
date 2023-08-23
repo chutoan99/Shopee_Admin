@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'src/services/product.service';
 import { Product } from 'src/types/product.model';
 import { Observable, of } from 'rxjs';
 import { AppState } from 'src/shared/app.state';
+import { ProductService } from 'src/services/product/index.service';
 
 @Component({
   selector: 'app-product-list',

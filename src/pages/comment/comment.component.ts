@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { CommentService } from 'src/services/comment.service';
-import { ProductService } from 'src/services/product.service';
+import { CommentService } from 'src/services/comment/index.service';
+import { ProductService } from 'src/services/product/index.service';
+
 import { AppState } from 'src/shared/app.state';
 import { shopidSelector } from 'src/shared/inforShop/inforShop.selector';
 import { Comment } from 'src/types/comment.model';

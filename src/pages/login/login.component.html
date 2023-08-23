@@ -1,3 +1,52 @@
+<input type="checkbox" name="" id="side-menu-switch" class="hidden" />
+<div class="side-menu">
+  <label for="side-menu-switch">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" fill="#666">
+      <path
+        d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+      />
+    </svg>
+  </label>
+  <h2 style="font-size: 24px; font-weight: 600; letter-spacing: 1px; margin-bottom: 40px">Shop Example</h2>
+
+  <div class="flex gap-[10px] gap-y-[15px] flex-wrap justify-start h-full overflow-y-auto overflow-x-hidden" style="background-color: unset; color: unset">
+    <div
+      *ngFor="let data of dataSources$ | async; let i = index"
+      class="relative overflow-hidden shadow-lg flex flex-col items-center rounded-[10px] w-[180px] p-2 bg-white bg-clip-border shadow-xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none"
+    >
+      <div class="relative flex h-16 w-full justify-center rounded-md bg-cover">
+        <div style="position: absolute; inset: 0px; background-position: 50% center; background-size: cover; background-repeat: no-repeat; filter: blur(1px)">
+          <div style="position: absolute; inset: 0px; background-color: rgba(0, 0, 0, 0.6)">
+            <img src="{{ data?.portrait }}" class="absolute flex h-16 w-full justify-center rounded-md bg-cover" />
+          </div>
+        </div>
+        <div class="absolute -bottom-6 flex h-[50px] w-[50px] items-center justify-center rounded-full border-[2px] border-white bg-pink-400 dark:!border-navy-700">
+          <img class="h-full w-full rounded-full" src="{{ data?.cover }}" alt="" />
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col items-center px-[5px]">
+        <h4 class="text-[15px] font-bold text-navy-700 dark:text-white text-center">{{ data?.username }}</h4>
+
+        <p class="text-[15px] font-normal text-gray-600 text-center">{{ data?.name }}</p>
+      </div>
+      <div class="mx-3 mb-2 flex justify-between w-full">
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.item_count }}</p>
+          <p class="text-xs font-normal text-gray-600">Posts</p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.follower_count }}</p>
+          <p class="text-xs font-normal text-gray-600">Followers</p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-[15px] font-bold text-navy-700 dark:text-white">{{ data?.followed }}</p>
+          <p class="text-xs font-normal text-gray-600">Following</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section>
   <div class="colour"></div>
   <div class="colour"></div>

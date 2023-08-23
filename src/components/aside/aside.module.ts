@@ -4,7 +4,7 @@ import { AsideComponent } from './aside.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [CommonModule, FormsModule, BrowserModule, HttpClientModule, RouterModule],
   declarations: [AsideComponent],

@@ -1,78 +1,21 @@
-<div class="w-[100vw] h-[100vh]">
-  <div class="w-full h-full">
-    <div class="flex w-full h-full">
-      <div class="flex flex-col h-[100%]">
-        <div class="flex flex-col h-[100%]">
-          <aside class="p-[10px] bg-white h-full" aria-label="Sidebar" style="border: 1px solid #e8e8e8">
-            <div class="overflow-y-auto">
-              <ul class="pl-[unset] overflow-hidden">
-                <ng-container *ngFor="let item of navigation">
-                  <li class="px-[12px] py-[12px] cursor-pointer flex gap-[12px] items-center duration-2000">
-                    <img [src]="item?.icon" class="p-[5px] img-svg" [routerLink]="[item?.path]" />
-                  </li>
-                </ng-container>
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </div>
-
-      <div class="flex flex-col overflow-y-auto w-full h-full">
-        <div class="flex flex-col overflow-y-auto w-full h-full">
-          <main class="flex h-full w-full overflow-hidden">
-            <div class="w-full h-full flex">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2330.6301344573503!2d106.74697687586284!3d10.762430257088072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x31753a7edc0a72bd%3A0xe30753317c3d93e6!2zTmjDoCBCw6gsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!3m2!1d10.695264199999999!2d106.70487399999999!4m5!1s0x317525bf8d8bf5b1%3A0xa2426615a55b875c!2zSVRELCAxIMSQLiBTw6FuZyBU4bqhbywgVMOibiBUaHXhuq1uIMSQw7RuZywgUXXhuq1uIDcsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!3m2!1d10.7640502!2d106.7487584!5e0!3m2!1svi!2s!4v1672842686846!5m2!1svi!2s"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                class="w-full h-full"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <div class="w-[450px] h-full absolute bg-white overflow-y-auto" style="background: rgba(255, 255, 255, 0.75)">
-                <div
-                  class="w-[392px] h-[40px] mx-[auto] bg-white z-10 rounded-[7px] bg-white mt-[40px] items-center flex gap-[20px] pl-[10px]"
-                  style="border: 2px solid rgba(0, 0, 0, 0.05)"
-                >
-                  <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px]">
-                    <path
-                      opacity="0.4"
-                      d="M19.1592 16.0701L15.7962 12.7027C16.3057 11.5803 16.6115 10.4578 16.6115 9.23332C16.6115 6.98843 15.7962 4.94761 14.1656 3.417C10.9045 0.151691 5.70701 0.151691 2.44586 3.417C-0.815287 6.6823 -0.815287 11.8864 2.44586 15.1517C3.97452 16.6823 6.11465 17.6007 8.25478 17.6007C9.47771 17.6007 10.7006 17.2945 11.7197 16.7843L15.0828 20.1517C15.5924 20.6619 16.4076 20.968 17.121 20.968C17.8344 20.968 18.5478 20.6619 19.1592 20.1517C20.2803 18.9272 20.2803 17.0905 19.1592 16.0701ZM3.87261 13.519C1.42675 11.0701 1.42675 7.09047 3.87261 4.74353C5.09554 3.51904 6.6242 2.90679 8.25478 2.90679C9.88535 2.90679 11.414 3.51904 12.6369 4.74353C13.8599 5.96802 14.4713 7.49863 14.4713 9.13128C14.4713 10.7639 13.8599 12.3966 12.6369 13.519C11.414 14.6415 9.88535 15.3558 8.25478 15.3558C6.6242 15.3558 4.99363 14.7435 3.87261 13.519Z"
-                      fill="#333333"
-                    />
-                  </svg>
-                  <input
-                    class="text-[16px] leading-[100%] text-[#333333] no-underline bg-transparent outline-none font-inter"
-                    placeholder="Search..."
-                  />
-                </div>
-                <div class="w-[392px] h-[40px] mx-[auto]">
-                  <h3
-                    style="
-                      margin-bottom: 20px;
-                      margin-top: 25px;
-                      font-family: Inter;
-                      color: #000;
-                      font-size: 20px;
-                      line-height: 100%;
-                      font-weight: 700;
-                    "
-                  >
-                    Ongoing Delivery
-                  </h3>
-                </div>
-                <div class="flex flex-col gap-[20px] pb-[20px]">
-                  <app-ship-route-info [border]="true"></app-ship-route-info>
-                  <app-receipt></app-receipt>
-                </div>
-              </div>
-              <!-- <div class="flex-1 z-10 absolute right-0 top-0">
-                <img src="../../assets/svg/Group 283.svg" class="w-full h-full" />
-              </div> -->
-            </div>
-          </main>
-        </div>
-      </div>
+<main class="flex w-full h-full p-[20px]">
+  <div class="w-full h-full flex gap-[20px]">
+    <div class="flex-1 h-full rounded-[10px] p-[15px]" style="background: rgba(255, 255, 255, 70%)">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2330.6301344573503!2d106.74697687586284!3d10.762430257088072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x31753a7edc0a72bd%3A0xe30753317c3d93e6!2zTmjDoCBCw6gsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!3m2!1d10.695264199999999!2d106.70487399999999!4m5!1s0x317525bf8d8bf5b1%3A0xa2426615a55b875c!2zSVRELCAxIMSQLiBTw6FuZyBU4bqhbywgVMOibiBUaHXhuq1uIMSQw7RuZywgUXXhuq1uIDcsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!3m2!1d10.7640502!2d106.7487584!5e0!3m2!1svi!2s!4v1672842686846!5m2!1svi!2s"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        class="w-full h-full rounded-[10px]"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
+
+    <div class="w-[400px] h-full overflow-y-auto">
+      <app-ship-route-info></app-ship-route-info>
+    </div>
+    <!-- <div class="flex-1 z-10 absolute right-0 top-0">
+      <img src="../../assets/svg/Group 283.svg" class="w-full h-full" />
+    </div> -->
   </div>
-</div>
+</main>

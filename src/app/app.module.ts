@@ -1,19 +1,21 @@
-// Module
+//? Module
 import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RoutingModule } from './routing.module';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// Module
-
-import { AppComponent } from './app.component';
-
-import { SocketioService } from 'src/services/socketio.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { CoreModule } from 'src/shared/store.module';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { SocketioService } from 'src/services/socketio/index.service';
+//? Pages
+import { AppComponent } from './app.component';
 import { LoginModule } from 'src/pages/login/login.module';
 import { ChatModule } from 'src/pages/chat/chat.module';
 import { CommentModule } from 'src/pages/comment/comment.module';
@@ -21,14 +23,10 @@ import { ShipRouteModule } from 'src/pages/ship-route/ship-route.module';
 import { ProductModule } from 'src/pages/product/product.module';
 import { HomeModule } from 'src/pages/home/home.module';
 import { OrderModule } from 'src/pages/order/order.module';
-import { ReportModule } from 'src/pages/report/report.module';
 import { SettingModule } from 'src/pages/setting/setting.module';
-import { IndexModule } from 'src/pages/index/index.module';
 import { UserModule } from 'src/pages/user/user.module';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
+import { DefaultLayoutModule } from 'src/layouts/default/default.module';
+import { CustomLayoutModule } from 'src/layouts/custom/custom.module';
 
 registerLocaleData(en);
 @NgModule({
@@ -37,7 +35,6 @@ registerLocaleData(en);
     CoreModule,
     BrowserModule,
     ShipRouteModule,
-    IndexModule,
     LoginModule,
     ChatModule,
     UserModule,
@@ -46,9 +43,11 @@ registerLocaleData(en);
     OrderModule,
     SettingModule,
     RoutingModule,
+    RouterModule,
     CommentModule,
+    CustomLayoutModule,
+    DefaultLayoutModule,
     FormsModule,
-    ReportModule,
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot({}),

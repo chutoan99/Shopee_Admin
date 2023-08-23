@@ -6,10 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShipRouteComponent } from './ship-route.component';
 import { RouterModule } from '@angular/router';
 import { ShipRouteInfoComponent } from './components/info/ship-route-info.component';
-import { ReceiptComponent } from './components/receipt/receipt.component';
 
 @NgModule({
-  declarations: [ShipRouteComponent, ShipRouteInfoComponent, ReceiptComponent],
+  declarations: [ShipRouteComponent, ShipRouteInfoComponent],
   imports: [CommonModule, RouterModule, HttpClientModule, BrowserModule, FormsModule],
 })
 export class ShipRouteModule {}
